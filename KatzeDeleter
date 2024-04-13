@@ -2,22 +2,22 @@ import subprocess
 
 def execute_command_as_admin(command1, command2):
     try:
-        # Execute the first command as an administrator using subprocess and runas
+       
         result1 = subprocess.run(["runas", "/user:Administrator", command1], shell=True, capture_output=True, text=True)
-        # Print the output of the first command
+        
         print("Output of Command 1:")
         print(result1.stdout)
-        # Print any errors, if they occur
+        
         if result1.stderr:
             print("Errors in Command 1:")
             print(result1.stderr)
 
-        # Execute the second command as an administrator using subprocess and runas
+        
         result2 = subprocess.run(["runas", "/user:Administrator", command2], shell=True, capture_output=True, text=True)
-        # Print the output of the second command
+       
         print("\nOutput of Command 2:")
         print(result2.stdout)
-        # Print any errors, if they occur
+        
         if result2.stderr:
             print("Errors in Command 2:")
             print(result2.stderr)
